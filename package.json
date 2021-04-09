@@ -1,5 +1,5 @@
 {
-  "name": "react-picsum",
+  "name": "react-vite-tailwind-template",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
