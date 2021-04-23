@@ -9,5 +9,6 @@ git clone https://github.com/mrleidesen/react-vite-tailwind-template.git
 ```
 
 ## 运行
-> npm run install
+> npm run install  
+
 > npm run dev
