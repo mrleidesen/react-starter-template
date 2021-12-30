@@ -1,7 +1,5 @@
-import React from 'react'
+const App: React.VFC = () => (
+  <div className="text-[22px] text-red-500">Hello World!</div>
+);
 
-export default function App() {
-    return (
-        <div className="bg-white">Hello App</div>
-    )
-}
+export default App;
