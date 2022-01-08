@@ -1,4 +1,8 @@
-module.exports = {
+/* eslint-disable node/no-unpublished-require */
+/* eslint-disable @typescript-eslint/no-var-requires */
+const { defineConfig } = require('eslint-define-config');
+
+module.exports = defineConfig({
   root: true,
   extends: [
     'eslint:recommended',
@@ -14,8 +18,36 @@ module.exports = {
     ecmaVersion: 2020,
   },
   rules: {
-    'comma-dangle': ['error', 'never'],
-    semi: ['error', 'never'],
+    semi: ['error'],
+    'import/order': [
+      'error',
+      {
+        groups: [
+          'type',
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
+          'object',
+          'unknown',
+        ],
+        pathGroups: [
+          {
+            pattern: `@/**`,
+            group: 'internal',
+            position: 'before',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['internal', 'type'],
+        'newlines-between': 'always-and-inside-groups',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: false,
+        },
+      },
+    ],
     'sort-imports': [
       'error',
       {
@@ -77,4 +109,4 @@ module.exports = {
     '@typescript-eslint/no-var-requires': 'error',
     '@typescript-eslint/consistent-type-imports': 'error',
   },
-};
+});
