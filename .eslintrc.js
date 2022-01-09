@@ -76,13 +76,7 @@ module.exports = defineConfig({
     'react/jsx-key': 'error',
     'spaced-comment': ['error', 'always'],
     'node/no-unsupported-features/node-builtins': 'off',
-    'node/no-missing-import': [
-      'warn',
-      {
-        resolvePaths: ['src'],
-        tryExtensions: ['.ts', '.js', '.jsx', '.tsx', '.d.ts'],
-      },
-    ],
+    'node/no-missing-import': 'off',
     'node/no-missing-require': [
       'warn',
       {
@@ -90,7 +84,7 @@ module.exports = defineConfig({
       },
     ],
 
-    'node/no-unpublished-import': 'warn',
+    'node/no-unpublished-import': 'off',
     'node/no-unsupported-features/es-syntax': 'off',
 
     '@typescript-eslint/ban-ts-comment': 'error',

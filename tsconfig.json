@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": ".",
     "target": "ESNext",
     "importHelpers": true,
     "removeComments": true,
@@ -22,7 +22,10 @@
     "isolatedModules": true,
     "incremental": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
-  "include": ["src", "vite.config.ts"]
+  "include": ["./src", "vite.config.ts"]
 }
