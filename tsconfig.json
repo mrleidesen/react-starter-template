@@ -22,7 +22,7 @@
     "isolatedModules": true,
     "incremental": true,
     "noEmit": true,
-    "jsx": "react-jsx",
+    "jsx": "react",
     "paths": {
       "@/*": ["src/*"]
     }
