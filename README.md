@@ -1,4 +1,4 @@
-# react-vite-tailwind-template
+# react-vite-windi-template
 
 已经集成 `vite2`+`react-ts`+`windi css`+`alias`+`eslint`+`prettier`+`react-query`
 
