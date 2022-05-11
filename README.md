@@ -8,7 +8,7 @@
 - Git clone
 
 ```
-git clone https://github.com/mrleidesen/react-vite-tailwind-template.git
+git clone https://github.com/mrleidesen/react-vite-windi-template.git
 ```
 
 ## 运行
