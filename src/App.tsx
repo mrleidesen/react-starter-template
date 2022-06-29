@@ -4,10 +4,16 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 
 const queryClient = new QueryClient();
 
-const App: React.VFC = () => {
+export const TestUI: React.FC<{
+  title: string;
+}> = ({ title }) => {
+  return <div className="text-[22px] text-red-500">{title}</div>;
+};
+
+const App: React.FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="text-[22px] text-red-500">Hello World!</div>
+      <TestUI title="Testing!" />
     </QueryClientProvider>
   );
 };
