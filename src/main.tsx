@@ -1,13 +1,12 @@
-import React, { StrictMode } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import 'virtual:windi.css';
 
 import './index.css';
 import App from './App';
 
-ReactDOM.render(
-  <StrictMode>
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <React.StrictMode>
     <App />
-  </StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );

@@ -1,6 +1,6 @@
 # react-vite-windi-template
 
-已经集成 `vite2`+`react-ts`+`windi css`+`alias`+`eslint`+`prettier`+`react-query`
+已经集成 `vite3`+`react-ts(v18)`+`windi css`+`alias`+`eslint`+`prettier`+`react-query v4`+`vitest`
 
 ## 下载
 
