@@ -1,18 +1,16 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
 
-const queryClient = new QueryClient();
+import { Helmet } from './components/Helmet';
+import { AppRouter } from './router';
 
-export const TestUI: React.FC<{
-  title: string;
-}> = ({ title }) => {
-  return <div className="text-[22px] text-red-500">{title}</div>;
-};
+const queryClient = new QueryClient();
 
 const App: React.FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <TestUI title="Testing!" />
+      <Helmet />
+      <AppRouter />
     </QueryClientProvider>
   );
 };
