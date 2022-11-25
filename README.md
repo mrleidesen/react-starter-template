@@ -1,6 +1,19 @@
 # react-vite-windi-template
 
-已经集成 `vite3`+`react-ts(v18)`+`windi css`+`alias`+`eslint`+`prettier`+`react-query v4`+`vitest`
+已经集成如下：
+- vite3
+- windi css
+- eslint
+- prettier
+- react-query v4
+- vitest (根据情况更新，版本比较低)
+- valtio
+- react-router-dom
+- axios
+- husky
+- lint-stage
+
+均锁版本，如果需要升级，请自行更新，模板也会不定期更新
 
 ## 下载
 
