@@ -1,45 +1,40 @@
-import type { AxiosError } from 'axios';
+import type { Input, Options } from 'ky/distribution/types/options';
 
-import axios, { type AxiosRequestConfig } from 'axios';
+import ky from 'ky';
 
 import { getToken } from '.';
 
-const instance = axios.create({
-  // FIXME: 根据实际项目的 baseURL 配置
-  baseURL: '/api',
-});
+export const request = async <T>(url: Input, options?: Options) => {
+  const urlToString = url.toString();
+  const isURLHasPrefixURL =
+    urlToString.startsWith('http:') || urlToString.startsWith('https:');
 
-const errorHandler = (error: AxiosError<any>) => {
-  // FIXME: 可自行处理此处错误拦截
-  if (error.response) {
-    // const data = error.response.data;
-    // const status = error?.response?.status;
-    // const errMsg = data?.message ?? 'Error';
+  return await ky(url, {
+    // FIXME: 自行设定 prefixUrl
+    prefixUrl: isURLHasPrefixURL
+      ? undefined
+      : 'https://jsonplaceholder.typicode.com',
+    hooks: {
+      beforeRequest: [
+        (request) => {
+          // FIXME: 自行处理 headers
+          const token = getToken();
+          request.headers.set('Authorization', `Bearer ${token}`);
+        },
+      ],
+      beforeError: [
+        // FIXME: 自行处理错误拦截
+        (error) => {
+          const response = error.response;
 
-    return Promise.reject(error?.response);
-  }
+          if (!response.ok) {
+            console.log(`${response.status}:${response.statusText}`);
+          }
 
-  return Promise.reject(error);
+          return error;
+        },
+      ],
+    },
+    ...options,
+  }).json<T>();
 };
-
-// request interceptor
-instance.interceptors.request.use((config) => {
-  const token = getToken();
-  if (token && config.headers) {
-    config.headers['Authorization'] = 'Bearer ' + token;
-  }
-
-  return config;
-}, errorHandler);
-
-// response interceptor
-instance.interceptors.response.use((response) => {
-  // FIXME: 返回 response.data ，如果不需要可自行修改
-  return response.data;
-}, errorHandler);
-
-export function request<T = any>(config: AxiosRequestConfig) {
-  return instance.request<T, T>(config);
-}
-
-export default instance;
