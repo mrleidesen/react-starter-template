@@ -1,15 +1,29 @@
 import { useQuery } from '@tanstack/react-query';
 import { Trans, useTranslation } from 'react-i18next';
 
+import { Link } from 'react-router-dom';
+
 import { getUsers } from '@/api';
+import { idAndPath } from '@/router';
 
 const HomeView: React.FC = () => {
   const { i18n } = useTranslation();
 
   const { data: users } = useQuery({
     queryKey: ['users'],
-    queryFn: () => {
-      return getUsers();
+    queryFn: async () => {
+      const result = await getUsers();
+
+      return result
+        .map((user) => {
+          const path = idAndPath?.[user.id];
+
+          return {
+            ...user,
+            path,
+          };
+        })
+        .filter((user) => user?.path);
     },
     initialData: [],
   });
@@ -34,7 +48,9 @@ const HomeView: React.FC = () => {
       <h1 className="text-2xl font-bold">User List</h1>
       <ul>
         {users.map((user) => (
-          <li key={user.id}>{user.name}</li>
+          <li key={user.id}>
+            <Link to={user.path}>{user.name}</Link>
+          </li>
         ))}
       </ul>
     </div>

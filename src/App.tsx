@@ -1,6 +1,8 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
 
+import { BrowserRouter } from 'react-router-dom';
+
 import { Helmet } from './components/Helmet';
 import { AppRouter } from './router';
 
@@ -16,8 +18,10 @@ const queryClient = new QueryClient({
 const App: React.FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <Helmet />
-      <AppRouter />
+      <BrowserRouter>
+        <Helmet />
+        <AppRouter />
+      </BrowserRouter>
     </QueryClientProvider>
   );
 };
