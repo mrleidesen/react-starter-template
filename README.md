@@ -6,13 +6,14 @@
 - tailwind
 - eslint
 - prettier
-- react-query v4
+- react-query
 - vitest (根据情况更新，版本比较低)
 - valtio
 - react-router-dom
-- axios
+- ky
 - husky
 - lint-stage
+- i18next
 
 均锁版本，如果需要升级，请自行更新，模板也会不定期更新
 

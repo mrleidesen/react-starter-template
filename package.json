@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "tsc && vite build",
     "serve": "vite preview",
     "test": "vitest",
@@ -29,9 +29,9 @@
   },
   "dependencies": {
     "@tanstack/react-query": "4.35.3",
-    "axios": "1.5.0",
     "dayjs": "1.11.10",
     "i18next": "23.5.1",
+    "ky": "1.0.1",
     "lodash-es": "4.17.21",
     "react": "18.2.0",
     "react-dom": "18.2.0",
