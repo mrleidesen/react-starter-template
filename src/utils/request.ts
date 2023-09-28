@@ -19,7 +19,9 @@ export const request = async <T>(url: Input, options?: Options) => {
         (request) => {
           // FIXME: 自行处理 headers
           const token = getToken();
-          request.headers.set('Authorization', `Bearer ${token}`);
+          if (token) {
+            request.headers.set('Authorization', `Bearer ${token}`);
+          }
         },
       ],
       beforeError: [
