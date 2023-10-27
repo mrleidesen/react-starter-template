@@ -1,7 +1,12 @@
 import { useQuery } from '@tanstack/react-query';
 import { Trans, useTranslation } from 'react-i18next';
+import styled from 'styled-components';
 
 import { getUsers } from '@/api';
+
+const StyledBox = styled.div`
+  padding: 16px;
+`;
 
 const HomeView: React.FC = () => {
   const { i18n } = useTranslation();
@@ -19,7 +24,7 @@ const HomeView: React.FC = () => {
   };
 
   return (
-    <div>
+    <StyledBox>
       <button
         onClick={handleToggleLanguage}
         className="bg-gray-200 p-2 rounded"
@@ -37,7 +42,7 @@ const HomeView: React.FC = () => {
           <li key={user.id}>{user.name}</li>
         ))}
       </ul>
-    </div>
+    </StyledBox>
   );
 };
 
