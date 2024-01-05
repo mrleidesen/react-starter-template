@@ -10,8 +10,8 @@ overrides:
 
 dependencies:
   '@tanstack/react-query':
-    specifier: 4.35.3
-    version: 4.35.3(react-dom@18.2.0)(react@18.2.0)
+    specifier: 5.17.1
+    version: 5.17.1(react@18.2.0)
   dayjs:
     specifier: 1.11.10
     version: 1.11.10
@@ -19,8 +19,8 @@ dependencies:
     specifier: 23.5.1
     version: 23.5.1
   ky:
-    specifier: 1.0.1
-    version: 1.0.1
+    specifier: 1.1.3
+    version: 1.1.3
   lodash-es:
     specifier: 4.17.21
     version: 4.17.21
@@ -40,15 +40,15 @@ dependencies:
     specifier: 5.3.9
     version: 5.3.9(react-dom@18.2.0)(react-is@17.0.2)(react@18.2.0)
   valtio:
-    specifier: 1.11.2
-    version: 1.11.2(@types/react@18.2.22)(react@18.2.0)
+    specifier: 1.12.1
+    version: 1.12.1(@types/react@18.2.22)(react@18.2.0)
 
 devDependencies:
   '@testing-library/react':
     specifier: 12.1.2
     version: 12.1.2(react-dom@18.2.0)(react@18.2.0)
   '@types/lodash-es':
-    specifier: ^4.17.10
+    specifier: 4.17.10
     version: 4.17.10
   '@types/node':
     specifier: 14.18.9
@@ -919,26 +919,17 @@ packages:
     resolution: {integrity: sha512-myfUej5naTBWnqOCc/MdVOLVjXUXtIA+NpDrDBKJtLLg2shUjBu3cZmB/85RyitKc55+lUUyl7oRfLOvkr2hsw==}
     dev: true
 
-  /@tanstack/query-core@4.35.3:
-    resolution: {integrity: sha512-PS+WEjd9wzKTyNjjQymvcOe1yg8f3wYc6mD+vb6CKyZAKvu4sIJwryfqfBULITKCla7P9C4l5e9RXePHvZOZeQ==}
+  /@tanstack/query-core@5.17.1:
+    resolution: {integrity: sha512-kUXozQmU7NBtzX5dM6qfFNZN+YK/9Ct37hnG/ogdgI4mExIx7VH/qRepsPhKfNrJz2w81/JykmM3Uug6sVpUSw==}
     dev: false
 
-  /@tanstack/react-query@4.35.3(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-UgTPioip/rGG3EQilXfA2j4BJkhEQsR+KAbF+KIuvQ7j4MkgnTCJF01SfRpIRNtQTlEfz/+IL7+jP8WA8bFbsw==}
+  /@tanstack/react-query@5.17.1(react@18.2.0):
+    resolution: {integrity: sha512-4JYgX0kU+pvwVQi5eRiHGvBK7WnahEl6lmaxd32ZVSKmByAxLgaewoxBR03cdDNse8lUD2zGOe0sx3M/EGRlmA==}
     peerDependencies:
       react: ^18.2.0
-      react-dom: ^18.2.0
-      react-native: '*'
-    peerDependenciesMeta:
-      react-dom:
-        optional: true
-      react-native:
-        optional: true
     dependencies:
-      '@tanstack/query-core': 4.35.3
+      '@tanstack/query-core': 5.17.1
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
 
   /@testing-library/dom@8.14.0:
@@ -1827,6 +1818,14 @@ packages:
     resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==}
     engines: {node: '>=0.4.0'}
     dev: true
+
+  /derive-valtio@0.1.0(valtio@1.12.1):
+    resolution: {integrity: sha512-OCg2UsLbXK7GmmpzMXhYkdO64vhJ1ROUUGaTFyHjVwEdMEcTTRj7W1TxLbSBxdY8QLBPCcp66MTyaSy0RpO17A==}
+    peerDependencies:
+      valtio: '*'
+    dependencies:
+      valtio: 1.12.1(@types/react@18.2.22)(react@18.2.0)
+    dev: false
 
   /didyoumean@1.2.2:
     resolution: {integrity: sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==}
@@ -3225,8 +3224,8 @@ packages:
       object.assign: 4.1.2
     dev: true
 
-  /ky@1.0.1:
-    resolution: {integrity: sha512-UvcwpQO0LOuZwG0Ti3VDo6w57KYt+r4bWEYlNaMt82hgyFtse86QtOGum1RzsZni31FndXQl6NvtDArfunt2JQ==}
+  /ky@1.1.3:
+    resolution: {integrity: sha512-t7q8sJfazzHbfYxiCtuLIH4P+pWoCgunDll17O/GBZBqMt2vHjGSx5HzSxhOc2BDEg3YN/EmeA7VKrHnwuWDag==}
     engines: {node: '>=18'}
     dev: false
 
@@ -4615,8 +4614,8 @@ packages:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: true
 
-  /valtio@1.11.2(@types/react@18.2.22)(react@18.2.0):
-    resolution: {integrity: sha512-1XfIxnUXzyswPAPXo1P3Pdx2mq/pIqZICkWN60Hby0d9Iqb+MEIpqgYVlbflvHdrp2YR/q3jyKWRPJJ100yxaw==}
+  /valtio@1.12.1(@types/react@18.2.22)(react@18.2.0):
+    resolution: {integrity: sha512-R0V4H86Xi2Pp7pmxN/EtV4Q6jr6PMN3t1IwxEvKUp6160r8FimvPh941oWyeK1iec/DTsh9Jb3Q+GputMS8SYg==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=16.8'
@@ -4628,6 +4627,7 @@ packages:
         optional: true
     dependencies:
       '@types/react': 18.2.22
+      derive-valtio: 0.1.0(valtio@1.12.1)
       proxy-compare: 2.5.1
       react: 18.2.0
       use-sync-external-store: 1.2.0(react@18.2.0)
