@@ -2,7 +2,7 @@
 
 已经集成如下：
 
-- vite3
+- vite5
 - tailwind
 - eslint
 - prettier
