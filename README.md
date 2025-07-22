@@ -2,14 +2,12 @@
 
 已经集成如下：
 
-- vite5
+- vite7
 - tailwind
 - eslint
 - prettier
 - react-query
-- vitest (根据情况更新，版本比较低)
-- valtio
-- react-router-dom
+- react-router
 - ky
 - husky
 - lint-stage

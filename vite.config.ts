@@ -21,7 +21,6 @@ export default defineConfig({
           '@tanstack/react-query',
           'react-router-dom',
           'dayjs',
-          'valtio',
         ].reduce(
           (soFar, current) => ({
             ...soFar,
