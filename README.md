@@ -1,15 +1,13 @@
-# react-vite-tailwind-template
+# react-rspack-starter-template
 
 已经集成如下：
 
-- vite5
+- rspack
 - tailwind
 - eslint
 - prettier
 - react-query
-- vitest (根据情况更新，版本比较低)
-- valtio
-- react-router-dom
+- react-router
 - ky
 - husky
 - lint-stage

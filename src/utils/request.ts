@@ -36,7 +36,8 @@ const kyOptions = (isBlob?: boolean) => {
                 return response;
               }
 
-              const result = await response.json();
+              // FIXME: to change
+              const result = await response.json<any>();
 
               // FIXME: 根据实际项目修改，有些项目会嵌套
               // { data: T, status: '200' }
