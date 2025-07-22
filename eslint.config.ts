@@ -1,15 +1,16 @@
+import tsPlugin from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
 import prettierPlugin from 'eslint-config-prettier';
+import importPlugin from 'eslint-plugin-import';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
-import tsPlugin from 'typescript-eslint';
-import importPlugin from 'eslint-plugin-import';
 
 export default [
   {
-    files: ['*/**/*.{ts,tsx}'],
+    files: ['**/*.{ts,tsx}'],
     ignores: ['node_modules/**/*', '.wxt/**/*', '.output/**/*'],
     languageOptions: {
-      parser: tsPlugin.parser,
+      parser: tsParser,
     },
     settings: {
       react: {
@@ -70,6 +71,22 @@ export default [
           allowSeparatedGroups: false,
         },
       ],
+      'no-multiple-empty-lines': ['error', { max: 1 }],
+      'no-use-before-define': 'warn',
+      'no-async-promise-executor': 'warn',
+      'no-unused-expressions': 'warn',
+      '@typescript-eslint/explicit-module-boundary-types': 'off',
+      '@typescript-eslint/no-empty-function': 'error',
+      '@typescript-eslint/no-empty-interface': 'warn',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-inferrable-types': 'error',
+      '@typescript-eslint/no-non-null-assertion': 'warn',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { varsIgnorePattern: '^_', ignoreRestSiblings: true },
+      ],
+      '@typescript-eslint/no-var-requires': 'error',
+      '@typescript-eslint/consistent-type-imports': 'error',
     },
   },
 ];
